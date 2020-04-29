@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      #MYSQL_ALLOW_EMPTY_PASSWORD: 'Yes'
+      #MYSQL_RANDOM_ROOT_PASSWORD: 'Yes'
+
+  web:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - '8000:80'
+    restart: always
+    environment:
+      MYSQL_HOST: db:3306
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    working_dir: /var/www/html
+    volumes:
+      - ./html/:/var/www/html/
+      - ./php.ini:/usr/local/etc/php/conf.d/webdev.ini
+
+volumes:
+  db_data: {}
