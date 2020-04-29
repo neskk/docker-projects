@@ -7,6 +7,8 @@ Docker templates for development environments.
 
 ### Build the project
 
+> docker-compose build
+
 > docker-compose up -d
 
 ### Shutdown and cleanup
@@ -20,6 +22,8 @@ Remove the containers, default network, and the **database volume**:
 ### Access a container
 
 > docker exec -it CONTAINER /bin/bash
+
+> docker logs -f CONTAINER
 
 ----
 
