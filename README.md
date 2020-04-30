@@ -19,6 +19,8 @@ Preserve database volume:
 Remove the containers, default network, and the **database volume**:
 > docker-compose down --volumes
 
+> docker-compose rm -f
+
 ### Access a container
 
 > docker exec -it CONTAINER /bin/bash
