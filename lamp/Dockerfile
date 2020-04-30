@@ -15,7 +15,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 #RUN apt autoremove -y
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql zip
+RUN docker-php-ext-install gettext mysqli pdo pdo_mysql zip
 
 RUN docker-php-ext-configure gd --with-gd \
     --with-freetype-dir --with-jpeg-dir --with-png-dir --with-xpm-dir --with-webp-dir --with-zlib-dir \
