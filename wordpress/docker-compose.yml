@@ -3,8 +3,6 @@ version: '3.3'
 services:
   db:
     image: mysql:5.7
-    volumes:
-      - db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -13,6 +11,9 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       #MYSQL_ALLOW_EMPTY_PASSWORD: 'Yes'
       #MYSQL_RANDOM_ROOT_PASSWORD: 'Yes'
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/custom.cnf
 
   web:
     depends_on:
