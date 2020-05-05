@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       #MYSQL_ALLOW_EMPTY_PASSWORD: 'Yes'
       #MYSQL_RANDOM_ROOT_PASSWORD: 'Yes'
-     volumes:
+    volumes:
       - db_data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/conf.d/custom.cnf
 
