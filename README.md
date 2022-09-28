@@ -27,6 +27,15 @@ Remove the containers, default network, and the **database volume**:
 
 > docker logs -f CONTAINER
 
+
+### Read More
+
+- [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
+- [Docker Compose](https://docs.docker.com/compose/compose-file/)
+- [Docker Volumes](https://docs.docker.com/storage/volumes/)
+- [Docker Volumes Backup/Restore](https://docs.docker.com/storage/volumes/#backup-restore-or-migrate-data-volumes)
+- [Docker Networking](https://docs.docker.com/network/)
+
 ----
 
 ## LAMP Setup - Linux Apache MySQL PHP
@@ -112,3 +121,12 @@ Including every PHP extension that exists would dramatically increase the image 
 If you need additional PHP extensions, you'll need to create your own image.
 The [documentation of the php image](https://hub.docker.com/_/php) explains how to compile additional extensions.
 Additionally, the [WordPress Dockerfile](https://github.com/docker-library/wordpress) has an example of doing this.
+
+
+## VS Code development with Docker Containers
+
+- Customize the Docker extension: https://code.visualstudio.com/docs/containers/reference
+- Debug containerized apps: https://code.visualstudio.com/docs/containers/debug-common
+- Use Docker Compose: https://code.visualstudio.com/docs/containers/docker-compose
+- Debug Python within a container: https://code.visualstudio.com/docs/containers/debug-python
+- Dockerize a Flask app and debug with VSCode: https://dev.to/pacheco/dockerize-a-flask-app-and-debug-with-vscode-34i1
